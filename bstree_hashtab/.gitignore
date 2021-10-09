@@ -1,0 +1,8 @@
+#ignore files
+*.exe
+*.com
+*.out
+*.d
+*.o
+*.a
+*.png
