@@ -42,15 +42,14 @@ void avltree_print_dfs(struct avltree *root, int level)
 ```
 Вставить в АВЛ-дерево ~50000 элементов, заранее отсортированных в порядке возрастания/убывания. Используя функцию **avltree_lookup**, продемонстрировать логарифмическую зависимость
 высоты дерева от количества добавленных в него узлов ([построить график](https://docs.google.com/spreadsheets/d/1ayLNHlFXmYQaVEilcPmVGEpLRbw--hm-lhpjLAT__GE/edit?usp=sharing)). Продемонстрировать алгоритм удаления узлов из дерева. Описать алгоритмы поворотов АВЛ-дерева. Доказать утверждение о высоте АВЛ-дерева.
-## Префиксные деревья.
+## Фибоначчиевы кучи.
 ### Задание на работу
-Реализовать функции для работы с префиксными деревьями (**tries**):
+Реализовать функции для работы с фибоначчиевыми кучами (**Fibonacci heaps**):
 ```
-struct trie *trie_create()
-struct trie *trie_insert(struct trie *root, char *key, char value)
-struct trie *trie_lookup(struct trie *root, char *key)
-struct trie *trie_delete(struct trie *root, char *key)
-void trie_print(struct trie *root, int level)
+struct fibheap *fibheap_insert(struct fibheap *heap, int key, char *value)
+struct fibheap *fibheap_min(struct fibheap *heap)
+struct fibheap *fibheap_union(struct fibheap *heap1, struct fibheap *heap2)
+struct fibheap *fibheap_delete_min(struct fibheap *heap)
+struct fibheap *fibheap_decrease_key(struct fibheap *heap, struct fibheap *node, int newkey)
+struct fibheap *fibheap_delete(struct fibheap *heap, int key)
 ```
-Список дочерних узлов хранить в связном списке, массиве или сбалансированном дереве поиска.  
-Объяснить основные алгоритмы для работы с префиксными деревьями. Описать различные подходы к хранению списков дочерних узлов в префиксном дереве. Как модифицировать код программы для реализации упорядоченного словаря (**ordered map**)? Провести сравнительный анализ вычислительной сложности операций префиксного дерева, сбалансированного дерева поиска (**red-black** / **AVL tree**) и хеш-таблицы при хранении данных со строковыми ключами. Описать принцип работы вариаций префиксного дерева: **bitwise tree**, **radix tree**, **suffix tree**.
